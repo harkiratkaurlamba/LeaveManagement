@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+<!doctype html>
+{% block title %}
+    <title> Company Calendar </title>
+{% endblock title %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+
+    <!-- Mobiscroll JS and CSS Includes -->
+    <link rel="stylesheet" href= "{% static 'css/mobiscroll.javascript.min.css' %}">
+    <script src="{% static 'js/mobiscroll.javascript.min.js' %}"></script>
+
+    <style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    body,
+    html {
+        height: 100%;
+    }
+
+    </style>
+
+</head>
+<body>
+
+<div mbsc-page class="demo-dots-colors-labels">
+  <div style="height:100%">
+      <div class="mbsc-grid">
+        <div class="mbsc-row">
+            <div class="mbsc-col-sm-12 mbsc-col-md-4">
+                <div class="mbsc-form-group">
+                    <div class="mbsc-form-group-title"></div>
+                    <div id="demo-marked"></div>
+                </div>
+            </div>
+            <div class="mbsc-col-sm-12 mbsc-col-md-4">
+                <div class="mbsc-form-group">
+                    <div class="mbsc-form-group-title"></div>
+                    <div id="demo-labels"></div>
+                </div>
+            </div>
+            <div class="mbsc-col-sm-12 mbsc-col-md-4">
+                <div class="mbsc-form-group">
+                    <div class="mbsc-form-group-title"></div>
+                    <div id="demo-colored"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+    mobiscroll.setOptions({
+        locale: mobiscroll.localeEn,  // Specify language like: locale: mobiscroll.localePl or omit setting to use default
+        theme: 'ios',                 // Specify theme like: theme: 'ios' or omit setting to use default
+        themeVariant: 'light'         // More info about themeVariant: https://docs.mobiscroll.com/5-0-0_beta6/javascript/eventcalendar#opt-themeVariant
+    });
+    
+    var now = new Date();
+
+    
+    mobiscroll.eventcalendar('#demo-labels', {
+        labels: [                     // More info about labels: https://docs.mobiscroll.com/5-0-0_beta6/javascript/eventcalendar#opt-labels
+            
+            { start: new Date(2021, 00, 01), end: new Date(2021, 00, 01), text: 'New Year', color: '#f4511e' },
+            { start: new Date(2021, 00, 14), end: new Date(2021, 00, 14), text: 'Pongal', color: '#f4511e' },
+            { start: new Date(2021, 00, 26), end: new Date(2021, 00, 26), text: 'Republic Day', color: '#f4511e' },
+            { start: new Date(2021, 03, 02), end: new Date(2021, 03, 02), text: 'Good Friday', color: '#f4511e' },
+            { start: new Date(2021, 03, 14), end: new Date(2021, 03, 14), text: 'Tamil Nadu Year', color: '#f4511e' },
+            { start: new Date(2021, 04, 14), end: new Date(2021, 04, 14), text: 'idul Fitr', color: '#f4511e' },
+            { start: new Date(2021, 07, 30), end: new Date(2021, 07, 30), text: 'Jamnashtami', color: '#f4511e' },
+            { start: new Date(2021, 08, 10), end: new Date(2021, 08, 10), text: 'Ganesh Chaturthi', color: '#f4511e' },
+            { start: new Date(2021, 09, 15), end: new Date(2021, 09, 15), text: 'Dussera', color: '#f4511e' },
+            { start: new Date(2021, 10, 03), end: new Date(2021, 10, 03), text: 'Diwali', color: '#f4511e' }
+        ]
+    });
+</script>
+
+</body>
+</html>
+
+
+{% endblock content %}

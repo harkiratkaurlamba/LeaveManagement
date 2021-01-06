@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title> To do list </title>
+{% endblock title %}
+
+{% block content %} 
+    <div class= "container">
+
+
+  
+
+        <h3> Upcoming Leaves</h3>
+
+        <table class="table table-bordered">
+                <thead >
+                        <tr> 
+                        <th bgcolor=#52A0FD scope="col">Name</th>
+                        <th bgcolor=#52A0FD scope="col">Day</th>
+                        <th bgcolor=#52A0FD scope="col">Month</th>
+                        </tr>
+                </thead> 
+                <tbody>
+        {% for obj in team_mates %}          
+                {% if obj.month == 1 %}
+                <tr>
+                        <th scope="row">{{obj.name}}</th>
+                        <td>{{obj.day}}</td>
+                        <td>January</td>
+                </tr>
+                {% elif obj.month == 2 %}
+                <tr>>
+                        <th scope="row">{{obj.name}}</th>
+                        <td>{{obj.day}}</td>
+                        <td>Feburary</td>
+                </tr>
+                {% elif obj.month == 3 %}
+                <tr>>
+                        <th scope="row">{{obj.name}}</th>
+                        <td>{{obj.day}}</td>
+                        <td>March</td>
+                </tr>
+                {% elif obj.month == 4 %}
+                <tr>>
+                        <th scope="row">{{obj.name}}</th>
+                        <td>{{obj.day}}</td>
+                        <td>April</td>
+                </tr>
+                {% elif obj.month == 5 %}
+                <tr>>
+                        <th scope="row">{{obj.name}}</th>
+                        <td>{{obj.day}}</td>
+                        <td>May</td>
+                </tr>
+                {% elif obj.month == 6 %}
+                <tr>>
+                        <th scope="row">{{obj.name}}</th>
+                        <td>{{obj.day}}</td>
+                        <td>June</td>
+                </tr>
+                {% elif obj.month == 7 %}
+                <tr>>
+                        <th scope="row">{{obj.name}}</th>
+                        <td>{{obj.day}}</td>
+                        <td>July</td>
+                </tr>
+                {% elif obj.month == 8 %}
+                <tr>>
+                        <th scope="row">{{obj.name}}</th>
+                        <td>{{obj.day}}</td>
+                        <td>August</td>
+                </tr>
+                {% elif obj.month == 9 %}
+                <tr>>
+                        <th scope="row">{{obj.name}}</th>
+                        <td>{{obj.day}}</td>
+                        <td>September</td>
+                </tr>
+                {% elif obj.month == 10 %}
+                <tr>>
+                        <th scope="row">{{obj.name}}</th>
+                        <td>{{obj.day}}</td>
+                        <td>October</td>
+                </tr>
+                {% elif obj.month == 11 %}
+                <tr>>
+                        <th scope="row">{{obj.name}}</th>
+                        <td>{{obj.day}}</td>
+                        <td>Novemeber</td>
+                </tr>
+                {% elif obj.month == 12 %}
+                <tr>>
+                        <th scope="row">{{obj.name}}</th>
+                        <td>{{obj.day}}</td>
+                        <td>December</td>
+                </tr>
+
+                {% endif %}  
+        {% endfor %}
+                </tbody>
+        </table>
+  
+    </div>
+
+{% endblock content %}
